@@ -10,7 +10,7 @@
       "type": "none"
     },
     "rightPriceScale": {
-      "visible": true
+      "visible": "true"
     },
     "leftPriceScale": {},
     "grid": {
@@ -22,7 +22,7 @@
     "keneticScroll": {},
     "crosshair": {
       "vertLine": {
-        "width": 3,
+        "width": 1,
         "visible": true
       },
       "horzLine": {
@@ -31,9 +31,9 @@
       }
     }
   },
-  "lineOptions": {
-    "color": "blue",
-    "priceLineVisible": false,
-    "crosshairMarkerVisible": false
+  "areaSeriesOptions": {
+    "lineColor": "#2962FF",
+    "topColor": "#2962FF",
+    "bottomColor": "rgba(41, 98, 255, 0.28)"
   }
 }
