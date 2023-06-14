@@ -1,0 +1,39 @@
+{
+  "chartOptions": {
+    "layout": {
+      "background": {
+        "color": "transparent"
+      }
+    },
+    "background": {
+      "color": "transparent",
+      "type": "none"
+    },
+    "rightPriceScale": {
+      "visible": true
+    },
+    "leftPriceScale": {},
+    "grid": {
+      "horzLines": {},
+      "vertLines": {}
+    },
+    "timeScale": {},
+    "handleScale": {},
+    "keneticScroll": {},
+    "crosshair": {
+      "vertLine": {
+        "width": 3,
+        "visible": true
+      },
+      "horzLine": {
+        "visible": true,
+        "labelVisible": true
+      }
+    }
+  },
+  "lineOptions": {
+    "color": "blue",
+    "priceLineVisible": false,
+    "crosshairMarkerVisible": false
+  }
+}

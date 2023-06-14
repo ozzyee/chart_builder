@@ -21,12 +21,13 @@ export const Editor = ({code, onChange}) => {
         return () => {
             document.removeEventListener('keydown', handleKeyBinding);
         };
-    }, []);
+    }, [code]);
 
 
     const saveCode = async () => {
         try {
-            const infoNotification = toast.info('Saving...');
+            JSON.parse(code)
+
             await fetch('api/config', {
                 method: 'POST',
                 headers: {
@@ -37,12 +38,12 @@ export const Editor = ({code, onChange}) => {
                 })
             })
 
-            toast.dismiss(infoNotification);
             toast.success('Saved!', {
                 autoClose: 2000
             });
         } catch (e) {
-            toast.error('Error, could not save!');
+            toast.error('Error, could not save, Check your code!');
+            console.log(e)
         }
     }
 

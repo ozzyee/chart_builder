@@ -3,6 +3,7 @@ import {Editor} from "@/components/editor";
 import useSWR from 'swr'
 import {useEffect, useState} from "react";
 import {Chart} from "@/components/chart";
+import LoadingPage from "@/components/loading";
 
 
 export default function Home() {
@@ -16,11 +17,11 @@ export default function Home() {
             setCode(JSON.stringify(data.data.value, null, 2))
     }, [data])
 
-    if (!data || isLoading) return <div>Loading...</div>
+    if (!data || isLoading) return <LoadingPage/>
 
     return (
         <main>
-            <Chart/>
+            <Chart code={_code}/>
             <Editor
                 code={_code}
                 onChange={(code) => {
