@@ -53,7 +53,7 @@ export const Editor = ({code, onChange}) => {
             setCode(formatCode(code))
         } catch (error) {
         }
-    }, [])
+    }, [code])
 
     return (
         <div className={"ide-container"}>
