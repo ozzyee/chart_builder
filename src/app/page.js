@@ -13,7 +13,7 @@ export default function Home() {
 
     useEffect(() => {
         if (data && data.data)
-            setCode(JSON.stringify(data.data.value))
+            setCode(JSON.stringify(data.data.value, null, 2))
     }, [data])
 
     if (!data || isLoading) return <div>Loading...</div>
