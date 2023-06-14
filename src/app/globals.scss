@@ -1,0 +1,61 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.editor-btn-wrapper {
+  display: flex;
+  align-items: start;
+  background-color: #1E1E1E;
+  height: 2em;
+  padding: 1em;
+
+  button {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+
+    &:hover {
+      background-color: #1c7ecc;
+      transition: all 120ms ease-in-out;
+    }
+  }
+}
+
+.ide-container{
+  position: relative;
+
+  .chart-docs{
+    width: 50vw;
+    float: right;
+    top: 4em;
+    right: 0;
+    position: absolute;
+    height: 60vh;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.chartContainer{
+  height: 550px;
+
+  .tv-lightweight-charts {
+    position: absolute;
+  }
+
+  .tv-lightweight-charts:first-child {
+    display: none;
+  }
+}

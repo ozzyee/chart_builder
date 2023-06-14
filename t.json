@@ -1,0 +1,33 @@
+{
+  "height": 500,
+  "layout": {
+    "background": {
+      "color": "transparent"
+    }
+  },
+  "background": {
+    "color": "transparent",
+    "type": "none"
+  },
+  "isUTC": true,
+  "rightPriceScale": {
+    "visible": true
+  },
+  "leftPriceScale": {},
+  "grid": {
+    "vertLines": {}
+  },
+  "timeScale": {},
+  "handleScale": {},
+  "keneticScroll": {},
+  "crosshair": {
+    "vertLine": {
+      "width": 2,
+      "visible": true
+    },
+    "horzLine": {
+      "visible": true,
+      "labelVisible": true
+    }
+  }
+}
