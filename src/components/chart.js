@@ -30,7 +30,7 @@ export const ChartComponent = props => {
                     textColor,
                 },
                 width: chartContainerRef.current.clientWidth,
-                height: 300,
+                height: 500,
                 ...code.chartOptions
             });
             chart.timeScale().fitContent();
