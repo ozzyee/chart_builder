@@ -7,9 +7,13 @@ export default async function handler(req, res) {
     })
     const client = await pool.connect();
 
+    const config = req.query.v || 1
+
+    console.log(config)
+
     switch (req.method) {
         case 'GET':
-            const result = await client.query('SELECT * FROM config WHERE ID = $1', [1]);
+            const result = await client.query('SELECT * FROM config WHERE ID = $1', [Number(config)]);
             res.status(200).json({
                 method: 'GET', data: {
                     value: JSON.parse(result.rows[0].value)
@@ -17,7 +21,7 @@ export default async function handler(req, res) {
             });
             break;
         case 'POST':
-            await client.query('UPDATE config SET value = $1 WHERE ID = $2', [req.body.value, 1]);
+            await client.query('UPDATE config SET value = $1 WHERE ID = $2', [req.body.value, Number(config)]);
             res.status(200).json({method: 'POST', body: req.body});
     }
 }

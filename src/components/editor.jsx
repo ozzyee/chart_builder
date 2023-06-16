@@ -36,7 +36,7 @@ const links = {
 
 
 // eslint-disable-next-line react/prop-types
-export const Editor = ({code, onChange}) => {
+export const Editor = ({code, onChange, onConfigChange, config}) => {
     const [_showDocs, setShowDocs] = useState(false)
     const editorRef = useRef(null);
     const [searchLink, setSearchLink] = useState("https://tradingview.github.io/lightweight-charts/docs")
@@ -62,7 +62,7 @@ export const Editor = ({code, onChange}) => {
         try {
             JSON.parse(code)
 
-            await fetch('api/config', {
+            await fetch('api/config?v=' + config, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -83,7 +83,6 @@ export const Editor = ({code, onChange}) => {
     const showDocs = () => {
         setShowDocs(!_showDocs)
     }
-
 
     useEffect(() => {
         const handleClick = (ev) => {
@@ -110,7 +109,6 @@ export const Editor = ({code, onChange}) => {
         };
     }, [])
 
-
     function getIFrameLink(event) {
         const iframe = document.getElementById('window-docs');
         const iframeLink = iframe.src;
@@ -136,6 +134,17 @@ export const Editor = ({code, onChange}) => {
                         onClick={getIFrameLink}
                     >Open in a new tab</button>
                 )}
+
+                <div className={"config-wrapper"}>
+                    <button className={config === 1 && "active"} onClick={() => {
+                        onConfigChange(1)
+                    }}>Config 1
+                    </button>
+                    <button className={config === 2 && "active"} onClick={() => {
+                        onConfigChange(2)
+                    }}>Config 2
+                    </button>
+                </div>
             </div>
             <ControlledEditor
                 height="60vh"

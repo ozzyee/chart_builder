@@ -11,6 +11,7 @@ body {
   padding: 1em;
 
   button {
+    z-index: 1000;
     background-color: #4a4a4a;
     color: #ffffff;
     border: none;
@@ -27,10 +28,10 @@ body {
   }
 }
 
-.ide-container{
+.ide-container {
   position: relative;
 
-  .chart-docs{
+  .chart-docs {
     width: 50vw;
     float: right;
     top: 4em;
@@ -48,7 +49,7 @@ body {
   }
 }
 
-.chartContainer{
+.chartContainer {
   height: 550px;
 
   .tv-lightweight-charts {
@@ -79,6 +80,27 @@ body {
   width: 50px;
   height: 50px;
   animation: spin 1s linear infinite;
+}
+
+
+.config-wrapper {
+  position: absolute;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  .active {
+    border-bottom: 2px solid #00FFFF;
+
+  }
+
+  button {
+    background-color: #1E1E1E;
+  }
 }
 
 @keyframes spin {
