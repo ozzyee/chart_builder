@@ -19,7 +19,6 @@ export const ChartComponent = props => {
 
     useEffect(
         () => {
-            console.log(code)
             const handleResize = () => {
                 chart.applyOptions({width: chartContainerRef.current.clientWidth});
             };
@@ -63,7 +62,6 @@ export function Chart(props) {
         try {
             setCode(JSON.parse(props.code))
         } catch (error) {
-            console.log(error)
         }
     }, [props.code]);
 
