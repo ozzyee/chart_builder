@@ -114,7 +114,8 @@ export const Editor = ({code, onChange}) => {
     function getIFrameLink(event) {
         const iframe = document.getElementById('window-docs');
         const iframeLink = iframe.src;
-        console.log('iFrame link:', iframeLink);
+
+        window.open(iframeLink, '_blank');
     }
 
     return (
